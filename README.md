@@ -1,4 +1,4 @@
-# <a name="top"></a>Orion Context Broker
+# <a name="top"></a>Orion Context Broker - TRE smart City variation
 
 <!-- Documentation badge line is processed by release.sh. Thus, if the structure of the URL changes,
      release.sh needs to be changed also -->
@@ -24,7 +24,7 @@
 		  
 ## Introduction
 
-This is the code repository for the Orion Context Broker, the reference implementation of the Publish/Subscribe Context Broker GE.
+This is the code repository for the Orion Context Broker (TRE smart city variation), the reference implementation of the Publish/Subscribe Context Broker GE. 
 
 This project is part of [FIWARE](http://www.fiware.org). Check also the [FIWARE Catalogue entry for Orion](http://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker)
 

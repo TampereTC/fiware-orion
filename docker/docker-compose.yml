@@ -6,7 +6,7 @@ mongo:
   command: --nojournal
 
 orion:
-  image: TampereTC/tre-smartcity-orion
+  image: tamperetc/tre-smartcity-orion
   links:
     - mongo
   ports:

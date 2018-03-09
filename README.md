@@ -1,4 +1,4 @@
-# <a name="top"></a>Orion Context Broker - TRE smart City variation
+# <a name="top"></a>Orion Context Broker - Tampere smart City edition
 
 <!-- Documentation badge line is processed by release.sh. Thus, if the structure of the URL changes,
      release.sh needs to be changed also -->

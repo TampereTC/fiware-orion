@@ -70,7 +70,7 @@ Check that everything works with
 ### 2B. MongoDB runs on another docker container
 In case you want to run MongoDB on another container you can launch it like this
 
-	sudo docker run --name mongodb -d mongo:3.4
+	sudo docker run --name mongodb -d mongo:3.6
 
 And then run Orion with this command
 

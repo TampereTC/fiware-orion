@@ -48,7 +48,7 @@ RUN \
     curl -OL https://github.com/mongodb/mongo-cxx-driver/archive/r3.1.2.tar.gz && \
     tar -xzf r3.1.2.tar.gz && \
     cd mongo-cxx-driver-r3.1.2/build && \
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/lib/ .. && \
     #scons install --prefix=/usr/local && \
     # Install rapidjson from source
     curl -kOL https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz && \

@@ -20,7 +20,10 @@ RUN \
       libgcrypt-devel \
       libcurl-devel \
       openssl-devel \
-      libuuid-devel \
+      libuuid-devel \ 
+      doxygen \
+      libpolarssl-dev \
+      libnl-utils \
       make \
       nc \
       git \

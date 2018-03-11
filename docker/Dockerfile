@@ -40,7 +40,7 @@ RUN \
     #curl -kOL https://github.com/mongodb/mongo-cxx-driver/archive/legacy-1.1.2.tar.gz && \
     #tar xfz legacy-1.1.2.tar.gz && \
     #cd mongo-cxx-driver-legacy-1.1.2 && \
-    curl -OL https://github.com/mongodb/mongo-cxx-driver/archive/r3.1.2.tar && \
+    curl -OL https://github.com/mongodb/mongo-cxx-driver/archive/r3.1.2.tar.gz && \
     tar -xzf r3.1.2.tar.gz && \
     cd mongo-cxx-driver-r3.1.2/build && \
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \

@@ -72,7 +72,7 @@ RUN \
            /opt/rapidjson-1.0.2 \
            /opt/v1.0.2.tar.gz \
            /usr/local/include/rapidjson \
-           /opt/fiware-orion \
+           /opt/tre-smartcity-orion \
            # We don't need to manage Linux account passwords requisites: lenght, mays/mins, etc.
            # This cannot be removed using yum as yum uses hard dependencies and doing so will 
            # uninstall essential packages

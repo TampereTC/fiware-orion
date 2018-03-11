@@ -15,7 +15,7 @@ RUN \
     yum -y install \
       boost-devel \
       bzip2 \
-      cmake \
+      cmake3 \
       gnutls-devel \
       libgcrypt-devel \
       libcurl-devel \

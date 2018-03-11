@@ -40,10 +40,11 @@ RUN \
     #curl -kOL https://github.com/mongodb/mongo-cxx-driver/archive/legacy-1.1.2.tar.gz && \
     #tar xfz legacy-1.1.2.tar.gz && \
     #cd mongo-cxx-driver-legacy-1.1.2 && \
-    curl -kOL https://github.com/mongodb/mongo-cxx-driver/archive/r3.2.0.tar.gz && \
-    tar xfz r3.2.0.tar.gz && \
-    cd mongo-cxx-driver-r3.2.0 && \
-    scons install --prefix=/usr/local && \
+    curl -OL https://github.com/mongodb/mongo-cxx-driver/archive/r3.1.2.tar && \
+    tar -xzf r3.1.2.tar.gz && \
+    cd mongo-cxx-driver-r3.1.2/build && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    #scons install --prefix=/usr/local && \
     # Install rapidjson from source
     curl -kOL https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz && \
     tar xfz v1.0.2.tar.gz && \
@@ -69,7 +70,7 @@ RUN \
            /usr/local/lib/libmicrohttpd.* \
            /opt/libmicrohttpd-0.9.48 \
            /opt/r3.2.0.tar.gz \
-           /opt/mongo-cxx-driver-r3.2.0 \
+           /opt/mongo-cxx-driver-r3.1.2 \
            /usr/local/include/mongo \
            /usr/local/lib/libmongoclient.a \
            /opt/rapidjson-1.0.2 \

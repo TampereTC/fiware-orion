@@ -47,7 +47,7 @@ RUN \
     mv rapidjson-1.0.2/include/rapidjson/ /usr/local/include && \
     # Install orion from source
     git clone https://github.com/TampereTC/tre-smartcity-orion && \
-    cd fiware-orion && \
+    cd tre-smartcity-orion && \
     git checkout ${GIT_REV_ORION} && \
     make && \
     make install && \

@@ -21,9 +21,9 @@ RUN \
       libcurl-devel \
       openssl-devel \
       libuuid-devel \ 
-      doxygen \
-      libpolarssl-dev \
-      libnl-utils \
+      mongo-c-driver \
+      pkg-config \
+      cyrus-sasl-devel \
       make \
       nc \
       git \

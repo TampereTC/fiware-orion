@@ -15,7 +15,6 @@ RUN \
     yum -y install \
       boost-devel \
       bzip2 \
-      cmake \
       cmake3 \
       gnutls-devel \
       libgcrypt-devel \
@@ -29,6 +28,8 @@ RUN \
       scons \
       tar \
       which && \
+    # Link the cmake3 visible
+    ln -s /usr/bin/cmake3 /usr/bin/cmake && \
     # Install libmicrohttpd from source
     curl -kOL http://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.48.tar.gz && \
     tar xvf libmicrohttpd-0.9.48.tar.gz && \

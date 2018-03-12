@@ -1,4 +1,4 @@
-FROM centos:centos7.4.1708
+FFROM centos:centos7.4.1708
 
 MAINTAINER FIWARE Orion Context Broker Team. Telefónica I+D
 
@@ -15,15 +15,12 @@ RUN \
     yum -y install \
       boost-devel \
       bzip2 \
-      cmake3 \
+      cmake \
       gnutls-devel \
       libgcrypt-devel \
       libcurl-devel \
       openssl-devel \
-      libuuid-devel \ 
-      mongo-c-driver \
-      pkg-config \
-      cyrus-sasl-devel \
+      libuuid-devel \
       make \
       nc \
       git \
@@ -31,8 +28,6 @@ RUN \
       scons \
       tar \
       which && \
-    # Link the cmake3 visible
-    ln -s /usr/bin/cmake3 /usr/bin/cmake && \
     # Install libmicrohttpd from source
     curl -kOL http://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.48.tar.gz && \
     tar xvf libmicrohttpd-0.9.48.tar.gz && \
@@ -42,21 +37,19 @@ RUN \
     make install && \
     ldconfig && \
     # Install mongodb driver from source
-    #curl -kOL https://github.com/mongodb/mongo-cxx-driver/archive/legacy-1.1.2.tar.gz && \
-    #tar xfz legacy-1.1.2.tar.gz && \
-    #cd mongo-cxx-driver-legacy-1.1.2 && \
-    curl -OL https://github.com/mongodb/mongo-cxx-driver/archive/r3.1.2.tar.gz && \
-    tar -xzf r3.1.2.tar.gz && \
-    cd mongo-cxx-driver-r3.1.2/build && \
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/lib/ .. && \
-    #scons install --prefix=/usr/local && \
+    curl -kOL https://github.com/mongodb/mongo-cxx-driver/archive/legacy-1.1.2.tar.gz && \
+    tar xfz legacy-1.1.2.tar.gz && \
+    cd mongo-cxx-driver-legacy-1.1.2 && \
+    scons install --prefix=/usr/local && \
     # Install rapidjson from source
     curl -kOL https://github.com/miloyip/rapidjson/archive/v1.0.2.tar.gz && \
     tar xfz v1.0.2.tar.gz && \
     mv rapidjson-1.0.2/include/rapidjson/ /usr/local/include && \
     # Install orion from source
     git clone https://github.com/TampereTC/tre-smartcity-orion && \
+    #git clone https://github.com/telefonicaid/fiware-orion && \
     cd tre-smartcity-orion && \
+    #cd fiware-orion && \
     git checkout ${GIT_REV_ORION} && \
     make && \
     make install && \
@@ -74,8 +67,8 @@ RUN \
            /usr/local/include/microhttpd.h \
            /usr/local/lib/libmicrohttpd.* \
            /opt/libmicrohttpd-0.9.48 \
-           /opt/r3.2.0.tar.gz \
-           /opt/mongo-cxx-driver-r3.1.2 \
+           /opt/legacy-1.1.2.tar.gz \
+           /opt/mongo-cxx-driver-legacy-1.1.2 \
            /usr/local/include/mongo \
            /usr/local/lib/libmongoclient.a \
            /opt/rapidjson-1.0.2 \
@@ -122,6 +115,5 @@ RUN \
     rm -f /var/log/*log
 
 WORKDIR /
-ENTRYPOINT ["/usr/bin/contextBroker","-fg", "-multiservice"]
+ENTRYPOINT ["/usr/bin/contextBroker","-fg", "-multiservice", "-ngsiv1Autocast" ]
 EXPOSE 1026
-

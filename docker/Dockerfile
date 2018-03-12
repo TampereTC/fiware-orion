@@ -46,10 +46,10 @@ RUN \
     tar xfz v1.0.2.tar.gz && \
     mv rapidjson-1.0.2/include/rapidjson/ /usr/local/include && \
     # Install orion from source
-    #git clone https://github.com/TampereTC/tre-smartcity-orion && \
-    git clone https://github.com/telefonicaid/fiware-orion && \
-    #cd tre-smartcity-orion && \
-    cd fiware-orion && \
+    git clone https://github.com/TampereTC/tre-smartcity-orion && \
+    #git clone https://github.com/telefonicaid/fiware-orion && \
+    cd tre-smartcity-orion && \
+    #cd fiware-orion && \
     git checkout ${GIT_REV_ORION} && \
     make && \
     make install && \
@@ -74,7 +74,8 @@ RUN \
            /opt/rapidjson-1.0.2 \
            /opt/v1.0.2.tar.gz \
            /usr/local/include/rapidjson \
-           /opt/fiware-orion \
+           #/opt/fiware-orion \
+           /opt/tre-smartcity-orion \
            # We don't need to manage Linux account passwords requisites: lenght, mays/mins, etc.
            # This cannot be removed using yum as yum uses hard dependencies and doing so will 
            # uninstall essential packages
